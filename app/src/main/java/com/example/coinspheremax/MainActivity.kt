@@ -6,7 +6,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,6 +23,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.coinspheremax.ui.theme.Card
 import com.example.coinspheremax.ui.theme.CoinSphereMaxTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,22 +46,6 @@ val Background = Color(0xFF0B1020)
 val Surface = Color(0xFF151B2E)
 val TextMain = Color(0xFFE8ECF8)
 val TextDim = Color(0xFF9AA3B2)
-
-@Composable
-fun Card(title: String, value: String) {
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 4.dp)
-            .background(Surface, shape = RoundedCornerShape(12.dp))
-            .padding(16.dp)
-    ) {
-        Column {
-            Text(text = title, color = TextDim)
-            Text(text = value, color = TextMain)
-        }
-    }
-}
 
 @Composable
 fun Home(modifier: Modifier = Modifier) {
